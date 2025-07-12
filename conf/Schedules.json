@@ -1,6 +1,50 @@
-{
-    "recording": {
-      "start": "0 26 5 * * *",
-      "stop": "0 46 5 * * *"
+[
+    {
+      "class": "OBSTask",
+      "name": "mrm-wakeup",
+      "cronStart": "0 26 5 * * *",
+      "cronStop":   "0 46 5 * * *",
+      "enabled": true,
+      "options": {
+        "obs_websocket_port": "4455",
+        "obs_websocket_address": "http://localhost",
+        "obs_websocket_password": "env:OBS_WEBSOCKET_PASSWORD",
+        "obs_path": "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe"
+      }
+    },
+    {
+      "class": "OBSTask",
+      "name": "breakfast-time",
+      "cronStart": "0 56 6 * * *",
+
+      "cronStop":   "0 06 7 * * *",
+      "enabled": true,
+      "options": {
+        "obs_websocket_port": "4455",
+        "obs_websocket_address": "http://localhost",
+        "obs_websocket_password": "env:OBS_WEBSOCKET_PASSWORD",
+        "obs_path": "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe"
+      }
+    },
+    {
+      "class": "OBSTask",
+      "name": "test-recording",
+      "cronStart": "check:3",
+      "cronStop":   "check:4",
+      "enabled": true,
+      "options": {
+        "obs_websocket_port": "4455",
+        "obs_websocket_address": "http://localhost",
+        "obs_websocket_password": "env:OBS_WEBSOCKET_PASSWORD",
+        "obs_path": "C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe"
+      }
+    },
+    {
+      "class": "Task",
+      "name": "task-test",
+      "cronStart": "check:1",
+      "cronStop":   "check:2",
+      "enabled": true,
+      "options": {}
     }
-  }
+]
